@@ -1,8 +1,15 @@
+import * as SC from "./HeaderStyled"
+
+import SocNet from "../../components/SocNet/SocNet";
+
 const Header:React.FC = () => {
     return (
-      <header>
-        <h1>adamkeyes</h1>
-      </header>
+      <SC.HeaderStyled>
+        <div>
+          <SC.HeaderTitle>adamkeyes</SC.HeaderTitle>
+          <SocNet />
+        </div>
+      </SC.HeaderStyled>
     );
 }
  
