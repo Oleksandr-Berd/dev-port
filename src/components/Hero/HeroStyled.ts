@@ -1,13 +1,37 @@
 import styled from "@emotion/styled";
 
-export const CommonCon = styled.div`
+type Props = {
+    bg1: string,
+    bg2: string,
+}
+
+export const CommonCon = styled.div<Props>`
+  position: relative;
+
   padding-top: 49px;
   padding-left: 16px;
   padding-right: 16px;
 
   text-align: center;
+  &:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -5;
 
+    content: url(${(props) => props.bg1});
+  }
+
+  &:after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translateY(162px);
+
+    content: url(${(props) => props.bg2});
+  }
 `;
+
 
 export const InnerCon = styled.div`
   padding-bottom: 80px;

@@ -1,8 +1,10 @@
 import * as SC from "./SkillsStyled"
 
+import bg from "../../assets/images/skill_bg_mob.svg"
+
 const Skills:React.FC = () => {
     return (
-      <SC.CommonCon>
+      <SC.CommonCon bg={bg}>
         <SC.SkillsList>
           <SC.SkillsItem>
             <h3>HTML</h3>

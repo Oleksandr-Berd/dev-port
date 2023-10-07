@@ -12,9 +12,9 @@ const Projects = () => {
       <SC.CommonCon>
         <SC.TitleCon>
           <h2>Projects</h2>
-          <a href="#">contact me</a>
+          <a href="#contact">contact me</a>
         </SC.TitleCon>
-        <ul>
+        <SC.ProjectsList>
           <SC.ProjectsItem>
             <SC.ImageCon>
               <img src={project1} alt="project_one" />
@@ -103,7 +103,7 @@ const Projects = () => {
               <a href="https://github.com/Oleksandr-Berd">view code</a>
             </SC.LinksCon>
           </SC.ProjectsItem>
-        </ul>
+        </SC.ProjectsList>
       </SC.CommonCon>
     );
 }

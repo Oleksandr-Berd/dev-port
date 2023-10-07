@@ -1,13 +1,20 @@
 import styled from "@emotion/styled";
 
-export const HeaderStyled = styled.header`
-  padding-top: 20px;
+type Props = {
+  status: string | null;
+};
+
+export const HeaderStyled = styled.header<Props>`
+  padding-top: ${(props) => (props.status ? "39px" : "20px")};
   padding-left: 111px;
   padding-right: 111px;
+  padding-bottom: ${(props) => (props.status ? "60px" : "0px")};
 
   & > div {
     text-align: center;
   }
+
+  background-color: ${(props) => (props.status ? "#242424" : "transparent")};
 `;
 
 export const HeaderTitle = styled.h1`

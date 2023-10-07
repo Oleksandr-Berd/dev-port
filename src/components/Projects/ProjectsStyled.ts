@@ -45,7 +45,15 @@ export const ProjectTitle = styled.h2`
   line-height: 1.33;
 `;
 
+export const ProjectsList = styled.ul`
+display: flex;
+flex-direction: column;
+`
+
 export const ProjectsItem = styled.li`
+  margin-left: auto;
+  margin-right: auto;
+
   &:not(:last-child) {
     margin-bottom: 40px;
   }

@@ -2,9 +2,13 @@ import * as SC from "./HeaderStyled"
 
 import SocNet from "../../components/SocNet/SocNet";
 
-const Header:React.FC = () => {
+type Props = {
+    status: string | null
+}
+
+const Header:React.FC<Props> = ({status}) => {
     return (
-      <SC.HeaderStyled>
+      <SC.HeaderStyled status={status ? status : null}>
         <div>
           <SC.HeaderTitle>adamkeyes</SC.HeaderTitle>
           <SocNet />

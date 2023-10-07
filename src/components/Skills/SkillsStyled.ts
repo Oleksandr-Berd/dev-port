@@ -1,11 +1,26 @@
 import styled from "@emotion/styled";
 
-export const CommonCon = styled.div`
+type Props = {
+  bg: string;
+};
+
+export const CommonCon = styled.div<Props>`
+  position: relative;
+
   padding-top: 40px;
   padding-left: 16px;
   padding-right: 14px;
 
   text-align: center;
+
+  &:after {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transform: translateY(70px);
+
+    content: url(${(props) => props.bg});
+  }
 `;
 
 export const SkillsList = styled.ul`

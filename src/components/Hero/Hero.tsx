@@ -1,10 +1,12 @@
 import * as SC from "./HeroStyled"
 
 import heroImage from "../../assets/images/profile_mobile.svg"
+import bg_mob1 from "../../assets/images/hero_bg_mob1.svg"
+import bg_mob2 from "../../assets/images/hero_bg_mob2.svg"
 
 const Hero:React.FC = () => {
     return (
-      <SC.CommonCon>
+      <SC.CommonCon bg1={bg_mob1} bg2={bg_mob2}>
         <SC.InnerCon>
           <SC.ImageCon>
             <img src={heroImage} alt="profile_picture" />
@@ -15,7 +17,7 @@ const Hero:React.FC = () => {
             Based in the UK, I’m a front-end developer passionate about building
             accessible web apps that users love.
           </SC.Paragraph>
-          <SC.ContactLink href="#">contact me</SC.ContactLink>
+          <SC.ContactLink href="#contact">contact me</SC.ContactLink>
         </SC.InnerCon>
       </SC.CommonCon>
     );
