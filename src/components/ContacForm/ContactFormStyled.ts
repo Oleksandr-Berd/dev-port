@@ -75,6 +75,7 @@ export const TextAreaStyled = styled.textarea`
   font-size: 16px;
   line-height: 1.6;
   letter-spacing: -0.22px;
+  color: #fff;
   background-color: transparent;
   border: none;
   border-bottom: 1px solid #979797;
