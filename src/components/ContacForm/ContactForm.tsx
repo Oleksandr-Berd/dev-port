@@ -12,7 +12,7 @@ const validationSchema = Yup.object().shape({
   name: Yup.string()
     .min(2, "A name can't be so short")
     .required("Name is required"),
-  email: Yup.string().email().required("Email is required"),
+  email: Yup.string().email("Sorry, invalid format").required("Email is required"),
   message: Yup.string()
     .min(10, "Message should be more than 10 symbols")
     .required("Message is required"),
@@ -56,6 +56,8 @@ const ContactForm: React.FC = () => {
     },
   });
 
+
+
   return (
     <SC.CommonCon id="contact" bg={bg}>
       <ToastContainer />
@@ -65,26 +67,35 @@ const ContactForm: React.FC = () => {
         fill in the form, and I’ll get back to you as soon as possible.
       </SC.FormParagraph>
       <SC.FormStyled onSubmit={handleSubmit}>
-        <SC.InputStyled
-          type="text"
-          name="name"
-          placeholder="name"
-          value={formik.values.name}
-          onChange={handleChange}
-        />
-        <SC.InputStyled
-          type="text"
-          name="email"
-          placeholder="email"
-          onChange={handleChange}
-          value={formik.values.email}
-        />
-        <SC.TextAreaStyled
-          name="message"
-          placeholder="message"
-          value={formik.values.message}
-          onChange={handleChange}
-        ></SC.TextAreaStyled>
+        <SC.InputCon>
+          <SC.InputStyled
+            type="text"
+            name="name"
+            placeholder="name"
+            value={formik.values.name}
+            onChange={handleChange}
+          />
+          {formik.errors.name === "A name can't be so short" ? (
+            <SC.InputError>{formik.errors.name}</SC.InputError>
+          ) : null}
+        </SC.InputCon>
+        <SC.InputCon>
+          <SC.InputStyled
+            type="text"
+            name="email"
+            placeholder="email"
+            onChange={handleChange}
+            value={formik.values.email}
+          />
+        </SC.InputCon>
+        <SC.InputCon>
+          <SC.TextAreaStyled
+            name="message"
+            placeholder="message"
+            value={formik.values.message}
+            onChange={handleChange}
+          ></SC.TextAreaStyled>
+        </SC.InputCon>
         <SC.ButtonCon>
           <SC.SubmitButton>send message</SC.SubmitButton>
         </SC.ButtonCon>

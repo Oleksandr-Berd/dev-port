@@ -51,7 +51,9 @@ export const FormStyled = styled.form`
 `;
 
 export const InputStyled = styled.input`
-  margin-bottom: 32px;
+  width: calc(100% - 32px);
+
+  display: inline-block;
   padding-left: 24px;
   padding-bottom: 17px;
 
@@ -59,21 +61,23 @@ export const InputStyled = styled.input`
   font-size: 16px;
   line-height: 1.6;
   letter-spacing: -0.22px;
+  color: #fff;
   background-color: transparent;
   border: none;
   border-bottom: 1px solid #979797;
 `;
 
 export const TextAreaStyled = styled.textarea`
-  height: 107px;
+width: calc(100% - 32px);
+height: 107px;
 
   padding-left: 24px;
   padding-bottom: 17px;
-  margin-bottom: 32px;
 
   text-transform: uppercase;
   font-size: 16px;
   line-height: 1.6;
+  color: #fff;
   letter-spacing: -0.22px;
   color: #fff;
   background-color: transparent;
@@ -96,4 +100,15 @@ export const SubmitButton = styled.button`
   border: none;
 
   border-bottom: 1px solid #4ee1a0;
+`;
+
+export const InputCon = styled.div`
+text-align: right;
+  margin-bottom: 32px;
+`;
+
+export const InputError = styled.p`
+  font-size: 12px;
+  line-height: 1.33;
+  color: #ff6f5b;
 `;
