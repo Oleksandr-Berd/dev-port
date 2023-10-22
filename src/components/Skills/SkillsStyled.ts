@@ -20,6 +20,16 @@ export const CommonCon = styled.div<Props>`
     transform: translateY(70px);
 
     content: url(${(props) => props.bg});
+
+    @media (min-width: 768px) {
+      transform: translateY(0px);
+    }
+  }
+
+  @media (min-width: 768px) {
+    padding-top: 52px;
+    padding-left: 32px;
+    padding-right: 104px;
   }
 `;
 
@@ -27,6 +37,15 @@ export const SkillsList = styled.ul`
   padding-bottom: 40px;
 
   border-bottom: 1px solid #979797;
+
+  @media (min-width: 768px) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: start;
+    gap: 52px;
+
+    border-bottom: none;
+  }
 `;
 
 export const SkillsItem = styled.li`
@@ -47,5 +66,24 @@ export const SkillsItem = styled.li`
   & > p {
     line-height: 1.6;
     color: #d9d9d9;
+  }
+
+  @media (min-width: 768px) {
+    text-align: left;
+
+    & > h3 {
+      display: inline-block;
+
+      margin-bottom: 14px;
+
+      font-size: 48px;
+      line-height: 1.17;
+      letter-spacing: -1.5px;
+    }
+
+    & > p {
+      font-size: 18px;
+      line-height: 1.56;
+    }
   }
 `;
