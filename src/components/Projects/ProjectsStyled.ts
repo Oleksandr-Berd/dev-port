@@ -5,6 +5,13 @@ export const CommonCon = styled.div`
   padding-left: 16px;
   padding-right: 16px;
   padding-bottom: 80px;
+
+  @media (min-width: 768px) {
+    padding-top: 0px;
+    padding-left: 30px;
+    padding-right: 32px;
+    padding-bottom: 100px;
+  }
 `;
 
 export const TitleCon = styled.div`
@@ -18,6 +25,11 @@ export const TitleCon = styled.div`
   & > h2 {
     font-size: 40px;
     letter-spacing: -1.14px;
+
+    @media (min-width: 768px){
+      font-size: 72px;
+      letter-spacing: -2.05px;
+    }
   }
 
   & > a {
@@ -48,6 +60,13 @@ export const ProjectTitle = styled.h2`
 export const ProjectsList = styled.ul`
 display: flex;
 flex-direction: column;
+
+@media (min-width: 768px){
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 24px;
+  grid-row-gap: 60px;
+}
 `
 
 export const ProjectsItem = styled.li`
