@@ -10,16 +10,17 @@ export const HeaderStyled = styled.header<Props>`
   padding-right: 111px;
   padding-bottom: ${(props) => (props.status ? "60px" : "0px")};
 
-  @media (min-width: 768px){
+  @media (min-width: 768px) {
     padding-top: 0px;
     padding-left: 30px;
     padding-right: 0px;
+    padding-bottom: ${(props) => (props.status ? "40px" : "0px")};
   }
 
   & > div {
     text-align: center;
 
-    @media (min-width: 768px){
+    @media (min-width: 768px) {
       display: flex;
       flex-direction: row;
       align-items: center;
