@@ -17,6 +17,11 @@ export const HeaderStyled = styled.header<Props>`
     padding-bottom: ${(props) => (props.status ? "40px" : "0px")};
   }
 
+  @media (min-width: 1440px){
+    padding-left: 165px;
+    padding-right: 165px;
+  }
+
   & > div {
     text-align: center;
 
@@ -48,10 +53,20 @@ margin-top: 30px;
   line-height: 0;
   letter-spacing: -0.44px;
 }
+
+@media (min-width: 1440px){
+  margin-top: 40px;
+}
 `
 export const TabSocNetCon = styled.div`
-padding-top: 34px;
-padding-left: 97px;
+  padding-top: 34px;
+  padding-left: 97px;
 
-background-color: #242424;
-`
+  background-color: #242424;
+
+  @media (min-width: 1440px) {
+    padding-top: 43px;
+    padding-right: 30px;
+    padding-left: 223px;
+  }
+`;
