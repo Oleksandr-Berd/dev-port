@@ -5,8 +5,8 @@ type Props = {
 };
 
 type InputProps = {
-  status?: string | null,
-}
+  status?: string | null;
+};
 
 export const CommonCon = styled.div<Props>`
   position: relative;
@@ -25,6 +25,17 @@ export const CommonCon = styled.div<Props>`
     transform: translateY(-90px);
 
     content: url(${(props) => props.bg});
+
+    @media (min-width: 768px) {
+      transform: translateY(-40px);
+    }
+  }
+
+  @media (min-width: 768px) {
+    text-align: center;
+
+    padding-left: 30px;
+    padding-right: 30px;
   }
 `;
 
@@ -44,6 +55,11 @@ export const FormParagraph = styled.p`
 
   line-height: 1.6;
   color: #d9d9d9;
+
+  @media (min-width: 768px) {
+    display: inline-block;
+    width: 445px;
+  }
 `;
 
 export const FormStyled = styled.form`
@@ -52,6 +68,12 @@ export const FormStyled = styled.form`
   padding-bottom: 87px;
 
   border-bottom: 1px solid #979797;
+
+  @media (min-width: 768px) {
+    padding-left: 132px;
+    padding-right: 132px;
+    padding-bottom: 92px;
+  }
 `;
 
 export const InputStyled = styled.input<InputProps>`
@@ -127,7 +149,7 @@ export const SubmitButton = styled.button`
 `;
 
 export const InputCon = styled.div`
-text-align: right;
+  text-align: right;
   margin-bottom: 32px;
 `;
 
