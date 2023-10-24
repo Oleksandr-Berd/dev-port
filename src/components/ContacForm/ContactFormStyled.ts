@@ -4,6 +4,10 @@ type Props = {
   bg: string;
 };
 
+type InputProps = {
+  status?: string | null,
+}
+
 export const CommonCon = styled.div<Props>`
   position: relative;
 
@@ -50,7 +54,7 @@ export const FormStyled = styled.form`
   border-bottom: 1px solid #979797;
 `;
 
-export const InputStyled = styled.input`
+export const InputStyled = styled.input<InputProps>`
   width: calc(100% - 32px);
 
   display: inline-block;
@@ -65,11 +69,21 @@ export const InputStyled = styled.input`
   background-color: transparent;
   border: none;
   border-bottom: 1px solid #979797;
+  border-bottom-color: ${(props) =>
+    props.status === "success"
+      ? "#4EE1A0"
+      : props.status === "error"
+      ? "#ff6f5b"
+      : "#979797"};
+
+  &:focus {
+    outline: none;
+  }
 `;
 
-export const TextAreaStyled = styled.textarea`
-width: calc(100% - 32px);
-height: 107px;
+export const TextAreaStyled = styled.textarea<InputProps>`
+  width: calc(100% - 32px);
+  height: 107px;
 
   padding-left: 24px;
   padding-bottom: 17px;
@@ -83,6 +97,16 @@ height: 107px;
   background-color: transparent;
   border: none;
   border-bottom: 1px solid #979797;
+  border-bottom-color: ${(props) =>
+    props.status === "success"
+      ? "#4EE1A0"
+      : props.status === "error"
+      ? "#ff6f5b"
+      : "#979797"};
+
+  &:focus {
+    outline: none;
+  }
 `;
 
 export const ButtonCon = styled.div`

@@ -28,19 +28,37 @@ const ContactForm: React.FC = () => {
   const handleSubmit = (evt: ChangeEvent<HTMLFormElement>) => {
     evt.preventDefault();
 
-   toast.success(
-     `${formik.values.name}, Your message is sent and will be considered ASAP! `,
-     {
-       position: "top-center",
-       autoClose: 5000,
-       hideProgressBar: false,
-       closeOnClick: true,
-       pauseOnHover: true,
-       draggable: true,
-       progress: undefined,
-       theme: "dark",
-     }
-   );
+    if(formik.errors.name || formik.errors.email || formik.errors.message){
+      toast.error(
+        `Please, fill all the fields properly`,
+        {
+          position: "top-center",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
+        }
+      );
+    } else {
+toast.success(
+  `${formik.values.name}, Your message is sent and will be considered ASAP! `,
+  {
+    position: "top-center",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: "dark",
+  }
+);
+    }
+
+   
     formik.resetForm();
   };
 
@@ -74,10 +92,21 @@ const ContactForm: React.FC = () => {
             placeholder="name"
             value={formik.values.name}
             onChange={handleChange}
+            status={
+              formik.errors.name === "A name can't be so short"
+                ? "error"
+                : formik.values.name.length > 1
+                ? "success"
+                : null
+            }
           />
           {formik.errors.name === "A name can't be so short" ? (
             <SC.InputError>{formik.errors.name}</SC.InputError>
-          ) : null}
+          ) : (
+            <SC.InputError style={{ opacity: "0" }}>
+              just empty space
+            </SC.InputError>
+          )}
         </SC.InputCon>
         <SC.InputCon>
           <SC.InputStyled
@@ -86,7 +115,21 @@ const ContactForm: React.FC = () => {
             placeholder="email"
             onChange={handleChange}
             value={formik.values.email}
+            status={
+              formik.errors.email === "Sorry, invalid format"
+                ? "error"
+                : formik.values.email.length > 1
+                ? "success"
+                : null
+            }
           />
+          {formik.errors.email === "Sorry, invalid format" ? (
+            <SC.InputError>{formik.errors.email}</SC.InputError>
+          ) : (
+            <SC.InputError style={{ opacity: "0" }}>
+              just empty space
+            </SC.InputError>
+          )}
         </SC.InputCon>
         <SC.InputCon>
           <SC.TextAreaStyled
@@ -94,7 +137,22 @@ const ContactForm: React.FC = () => {
             placeholder="message"
             value={formik.values.message}
             onChange={handleChange}
+            status={
+              formik.errors.message === "Message should be more than 10 symbols"
+                ? "error"
+                : formik.values.message.length > 10
+                ? "success"
+                : null
+            }
           ></SC.TextAreaStyled>
+          {formik.errors.message ===
+          "Message should be more than 10 symbols" ? (
+            <SC.InputError>{formik.errors.message}</SC.InputError>
+          ) : (
+            <SC.InputError style={{ opacity: "0" }}>
+              just empty space
+            </SC.InputError>
+          )}
         </SC.InputCon>
         <SC.ButtonCon>
           <SC.SubmitButton>send message</SC.SubmitButton>
