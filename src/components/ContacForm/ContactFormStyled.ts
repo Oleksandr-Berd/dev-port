@@ -37,6 +37,23 @@ export const CommonCon = styled.div<Props>`
     padding-left: 30px;
     padding-right: 30px;
   }
+
+  @media (min-width: 1440px) {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    padding-left: 165px;
+  }
+`;
+
+export const TextCon = styled.div`
+  @media (min-width: 1440px) {
+    margin-right: 220px;
+
+    text-align: left;
+  }
 `;
 
 export const FormTitle = styled.h2`
@@ -46,6 +63,10 @@ export const FormTitle = styled.h2`
 
   font-size: 40px;
   letter-spacing: -1.14px;
+
+  @media (min-width: 1440px) {
+    text-align: left;
+  }
 `;
 
 export const FormParagraph = styled.p`
@@ -60,6 +81,10 @@ export const FormParagraph = styled.p`
     display: inline-block;
     width: 445px;
   }
+
+  @media (min-width: 1440px) {
+    text-align: left;
+  }
 `;
 
 export const FormStyled = styled.form`
@@ -73,6 +98,14 @@ export const FormStyled = styled.form`
     padding-left: 132px;
     padding-right: 132px;
     padding-bottom: 92px;
+  }
+
+  @media (min-width: 1440px) {
+min-width: 445px;
+
+    padding: 0;
+
+    border-bottom: none;
   }
 `;
 

@@ -7,6 +7,8 @@ import { ToastContainer, toast } from "react-toastify";
 import * as SC from "./ContactFormStyled";
 
 import bg from "../../assets/images/form_bg_mob.svg";
+import bg_desk from "../../assets/images/bg_contact_desk.svg"
+import { useMediaQuery } from "usehooks-ts";
 
 const validationSchema = Yup.object().shape({
   name: Yup.string()
@@ -19,6 +21,9 @@ const validationSchema = Yup.object().shape({
 });
 
 const ContactForm: React.FC = () => {
+
+const isDesktop = useMediaQuery("(min-width:1440px)");
+
   const handleChange = (
     evt: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ): void => {
@@ -77,13 +82,15 @@ toast.success(
 
 
   return (
-    <SC.CommonCon id="contact" bg={bg}>
+    <SC.CommonCon id="contact" bg={isDesktop ? bg_desk : bg}>
       <ToastContainer />
-      <SC.FormTitle>Contact</SC.FormTitle>
-      <SC.FormParagraph>
-        I would love to hear about your project and how I could help. Please
-        fill in the form, and I’ll get back to you as soon as possible.
-      </SC.FormParagraph>
+      <SC.TextCon>
+        <SC.FormTitle>Contact</SC.FormTitle>
+        <SC.FormParagraph>
+          I would love to hear about your project and how I could help. Please
+          fill in the form, and I’ll get back to you as soon as possible.
+        </SC.FormParagraph>
+      </SC.TextCon>
       <SC.FormStyled onSubmit={handleSubmit}>
         <SC.InputCon>
           <SC.InputStyled
