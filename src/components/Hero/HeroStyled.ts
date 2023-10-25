@@ -13,6 +13,7 @@ export const CommonCon = styled.div<Props>`
   padding-right: 16px;
 
   text-align: center;
+
   &:before {
     position: absolute;
     top: 0;
@@ -20,6 +21,10 @@ export const CommonCon = styled.div<Props>`
     z-index: -5;
 
     content: url(${(props) => props.bg1});
+
+    @media (min-width: 1440px) {
+      transform: translateY(70px);
+    }
   }
 
   &:after {
@@ -32,6 +37,10 @@ export const CommonCon = styled.div<Props>`
 
     @media (min-width: 768px) {
       transform: translateY(412px);
+    }
+
+    @media (min-width: 1440px) {
+      transform: translateY(432px) translateX(-545px);
     }
   }
 

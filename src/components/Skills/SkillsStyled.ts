@@ -31,6 +31,11 @@ export const CommonCon = styled.div<Props>`
     padding-left: 32px;
     padding-right: 104px;
   }
+  @media (min-width: 1440px) {
+    padding-top: 72px;
+    padding-left: 170px;
+    padding-right: 170px;
+  }
 `;
 
 export const SkillsList = styled.ul`
@@ -45,6 +50,11 @@ export const SkillsList = styled.ul`
     gap: 52px;
 
     border-bottom: none;
+  }
+
+  @media (min-width: 1440px) {
+    grid-template-columns: repeat(3, 1fr);
+    grid-row-gap: 58px;
   }
 `;
 

@@ -1,10 +1,16 @@
 import * as SC from "./SkillsStyled"
 
 import bg from "../../assets/images/skill_bg_mob.svg"
+import bg_desk from "../../assets/images/skills_bg_desk.svg"
+import { useMediaQuery } from "usehooks-ts";
 
 const Skills:React.FC = () => {
+
+const isDesktop = useMediaQuery("(min-width:1440px)");
+
+
     return (
-      <SC.CommonCon bg={bg}>
+      <SC.CommonCon bg={isDesktop ? bg_desk : bg}>
         <SC.SkillsList>
           <SC.SkillsItem>
             <h3>HTML</h3>
