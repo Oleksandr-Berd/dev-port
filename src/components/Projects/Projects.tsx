@@ -1,5 +1,7 @@
 import * as SC from "./ProjectsStyled"
 
+import { useMediaQuery } from "usehooks-ts";
+
 import project1 from "../../assets/images/proj1_mob.svg"
 import project2 from "../../assets/images/proj2_mob.svg";
 import project3 from "../../assets/images/proj3_mob.svg";
@@ -8,6 +10,9 @@ import project5 from "../../assets/images/proj5_mob.svg";
 import project6 from "../../assets/images/proj6_mob.svg";
 
 const Projects = () => {
+
+const isDesktop = useMediaQuery("(min-width:1440px)");
+
     return (
       <SC.CommonCon>
         <SC.TitleCon>
@@ -17,6 +22,10 @@ const Projects = () => {
         <SC.ProjectsList>
           <SC.ProjectsItem>
             <SC.ImageCon>
+              <SC.LinksCon>
+                <a href="https://github.com/Oleksandr-Berd">view project</a>
+                <a href="https://github.com/Oleksandr-Berd">view code</a>
+              </SC.LinksCon>
               <img src={project1} alt="project_one" />
             </SC.ImageCon>
             <SC.ProjectTitle>design portfolio</SC.ProjectTitle>
@@ -24,13 +33,19 @@ const Projects = () => {
               <SC.TechItem>html</SC.TechItem>
               <SC.TechItem>css</SC.TechItem>
             </SC.TechList>
-            <SC.LinksCon>
+            <SC.LinksCon
+              style={isDesktop ? { display: "none" } : { display: "block" }}
+            >
               <a href="https://github.com/Oleksandr-Berd">view project</a>
               <a href="https://github.com/Oleksandr-Berd">view code</a>
             </SC.LinksCon>
           </SC.ProjectsItem>
           <SC.ProjectsItem>
             <SC.ImageCon>
+              <SC.LinksCon>
+                <a href="https://github.com/Oleksandr-Berd">view project</a>
+                <a href="https://github.com/Oleksandr-Berd">view code</a>
+              </SC.LinksCon>
               <img src={project2} alt="project_two" />
             </SC.ImageCon>
             <SC.ProjectTitle>e-learning landing page</SC.ProjectTitle>
@@ -38,13 +53,19 @@ const Projects = () => {
               <SC.TechItem>html</SC.TechItem>
               <SC.TechItem>css</SC.TechItem>
             </SC.TechList>
-            <SC.LinksCon>
+            <SC.LinksCon
+              style={isDesktop ? { display: "none" } : { display: "block" }}
+            >
               <a href="https://github.com/Oleksandr-Berd">view project</a>
               <a href="https://github.com/Oleksandr-Berd">view code</a>
             </SC.LinksCon>
           </SC.ProjectsItem>
           <SC.ProjectsItem>
             <SC.ImageCon>
+              <SC.LinksCon>
+                <a href="https://github.com/Oleksandr-Berd">view project</a>
+                <a href="https://github.com/Oleksandr-Berd">view code</a>
+              </SC.LinksCon>
               <img src={project3} alt="project_three" />
             </SC.ImageCon>
             <SC.ProjectTitle>todo web app</SC.ProjectTitle>
@@ -53,13 +74,19 @@ const Projects = () => {
               <SC.TechItem>css</SC.TechItem>
               <SC.TechItem>javascript</SC.TechItem>
             </SC.TechList>
-            <SC.LinksCon>
+            <SC.LinksCon
+              style={isDesktop ? { display: "none" } : { display: "block" }}
+            >
               <a href="https://github.com/Oleksandr-Berd">view project</a>
               <a href="https://github.com/Oleksandr-Berd">view code</a>
             </SC.LinksCon>
           </SC.ProjectsItem>
           <SC.ProjectsItem>
             <SC.ImageCon>
+              <SC.LinksCon>
+                <a href="https://github.com/Oleksandr-Berd">view project</a>
+                <a href="https://github.com/Oleksandr-Berd">view code</a>
+              </SC.LinksCon>
               <img src={project4} alt="project_four" />
             </SC.ImageCon>
             <SC.ProjectTitle>entertainment web app</SC.ProjectTitle>
@@ -68,13 +95,19 @@ const Projects = () => {
               <SC.TechItem>css</SC.TechItem>
               <SC.TechItem>javascript</SC.TechItem>
             </SC.TechList>
-            <SC.LinksCon>
+            <SC.LinksCon
+              style={isDesktop ? { display: "none" } : { display: "block" }}
+            >
               <a href="https://github.com/Oleksandr-Berd">view project</a>
               <a href="https://github.com/Oleksandr-Berd">view code</a>
             </SC.LinksCon>
           </SC.ProjectsItem>
           <SC.ProjectsItem>
             <SC.ImageCon>
+              <SC.LinksCon>
+                <a href="https://github.com/Oleksandr-Berd">view project</a>
+                <a href="https://github.com/Oleksandr-Berd">view code</a>
+              </SC.LinksCon>
               <img src={project5} alt="project_five" />
             </SC.ImageCon>
             <SC.ProjectTitle>memory game</SC.ProjectTitle>
@@ -83,13 +116,19 @@ const Projects = () => {
               <SC.TechItem>css</SC.TechItem>
               <SC.TechItem>javascript</SC.TechItem>
             </SC.TechList>
-            <SC.LinksCon>
+            <SC.LinksCon
+              style={isDesktop ? { display: "none" } : { display: "block" }}
+            >
               <a href="https://github.com/Oleksandr-Berd">view project</a>
               <a href="https://github.com/Oleksandr-Berd">view code</a>
             </SC.LinksCon>
           </SC.ProjectsItem>
           <SC.ProjectsItem>
             <SC.ImageCon>
+              <SC.LinksCon>
+                <a href="https://github.com/Oleksandr-Berd">view project</a>
+                <a href="https://github.com/Oleksandr-Berd">view code</a>
+              </SC.LinksCon>
               <img src={project6} alt="project_six" />
             </SC.ImageCon>
             <SC.ProjectTitle>art gallery showcase</SC.ProjectTitle>
@@ -98,7 +137,9 @@ const Projects = () => {
               <SC.TechItem>css</SC.TechItem>
               <SC.TechItem>javascript</SC.TechItem>
             </SC.TechList>
-            <SC.LinksCon>
+            <SC.LinksCon
+              style={isDesktop ? { display: "none" } : { display: "block" }}
+            >
               <a href="https://github.com/Oleksandr-Berd">view project</a>
               <a href="https://github.com/Oleksandr-Berd">view code</a>
             </SC.LinksCon>

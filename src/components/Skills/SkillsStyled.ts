@@ -24,6 +24,10 @@ export const CommonCon = styled.div<Props>`
     @media (min-width: 768px) {
       transform: translateY(0px);
     }
+
+    @media (min-width: 1440px){
+      transform: translateY(-100px);
+    }
   }
 
   @media (min-width: 768px) {
@@ -55,6 +59,8 @@ export const SkillsList = styled.ul`
   @media (min-width: 1440px) {
     grid-template-columns: repeat(3, 1fr);
     grid-row-gap: 58px;
+
+    padding-bottom: 140px;
   }
 `;
 
