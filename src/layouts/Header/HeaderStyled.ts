@@ -67,6 +67,6 @@ export const TabSocNetCon = styled.div`
   @media (min-width: 1440px) {
     padding-top: 43px;
     padding-right: 30px;
-    padding-left: 223px;
+    padding-left: 189px;
   }
 `;
