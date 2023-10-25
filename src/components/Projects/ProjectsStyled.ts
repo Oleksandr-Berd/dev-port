@@ -171,4 +171,14 @@ export const LinksCon = styled.div`
 
     transition: visibility 0.3s ease-in-out;
   }
+
+  & > a {
+    transition: color 0.3s ease-in-out;
+  }
+  
+  & > a:hover {
+    color: #4ee1a0;
+
+    transition: color 0.3s ease-in-out;
+  }
 `;
