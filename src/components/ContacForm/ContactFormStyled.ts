@@ -48,6 +48,19 @@ export const CommonCon = styled.div<Props>`
   }
 `;
 
+export const InnerCon = styled.div`
+  @media (min-width: 1440px) {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    padding-bottom: 92px;
+
+    border-bottom: 1px solid #979797;
+  }
+`;
+
 export const TextCon = styled.div`
   @media (min-width: 1440px) {
     margin-right: 220px;
@@ -101,11 +114,10 @@ export const FormStyled = styled.form`
   }
 
   @media (min-width: 1440px) {
-min-width: 445px;
+    min-width: 445px;
 
     padding: 0;
-
-    border-bottom: none;
+    border: none;
   }
 `;
 

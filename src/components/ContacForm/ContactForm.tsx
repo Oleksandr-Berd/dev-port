@@ -84,87 +84,90 @@ toast.success(
   return (
     <SC.CommonCon id="contact" bg={isDesktop ? bg_desk : bg}>
       <ToastContainer />
-      <SC.TextCon>
-        <SC.FormTitle>Contact</SC.FormTitle>
-        <SC.FormParagraph>
-          I would love to hear about your project and how I could help. Please
-          fill in the form, and I’ll get back to you as soon as possible.
-        </SC.FormParagraph>
-      </SC.TextCon>
-      <SC.FormStyled onSubmit={handleSubmit}>
-        <SC.InputCon>
-          <SC.InputStyled
-            type="text"
-            name="name"
-            placeholder="name"
-            value={formik.values.name}
-            onChange={handleChange}
-            status={
-              formik.errors.name === "A name can't be so short"
-                ? "error"
-                : formik.values.name.length > 1
-                ? "success"
-                : null
-            }
-          />
-          {formik.errors.name === "A name can't be so short" ? (
-            <SC.InputError>{formik.errors.name}</SC.InputError>
-          ) : (
-            <SC.InputError style={{ opacity: "0" }}>
-              just empty space
-            </SC.InputError>
-          )}
-        </SC.InputCon>
-        <SC.InputCon>
-          <SC.InputStyled
-            type="text"
-            name="email"
-            placeholder="email"
-            onChange={handleChange}
-            value={formik.values.email}
-            status={
-              formik.errors.email === "Sorry, invalid format"
-                ? "error"
-                : formik.values.email.length > 1
-                ? "success"
-                : null
-            }
-          />
-          {formik.errors.email === "Sorry, invalid format" ? (
-            <SC.InputError>{formik.errors.email}</SC.InputError>
-          ) : (
-            <SC.InputError style={{ opacity: "0" }}>
-              just empty space
-            </SC.InputError>
-          )}
-        </SC.InputCon>
-        <SC.InputCon>
-          <SC.TextAreaStyled
-            name="message"
-            placeholder="message"
-            value={formik.values.message}
-            onChange={handleChange}
-            status={
-              formik.errors.message === "Message should be more than 10 symbols"
-                ? "error"
-                : formik.values.message.length > 10
-                ? "success"
-                : null
-            }
-          ></SC.TextAreaStyled>
-          {formik.errors.message ===
-          "Message should be more than 10 symbols" ? (
-            <SC.InputError>{formik.errors.message}</SC.InputError>
-          ) : (
-            <SC.InputError style={{ opacity: "0" }}>
-              just empty space
-            </SC.InputError>
-          )}
-        </SC.InputCon>
-        <SC.ButtonCon>
-          <SC.SubmitButton>send message</SC.SubmitButton>
-        </SC.ButtonCon>
-      </SC.FormStyled>
+      <SC.InnerCon>
+        <SC.TextCon>
+          <SC.FormTitle>Contact</SC.FormTitle>
+          <SC.FormParagraph>
+            I would love to hear about your project and how I could help. Please
+            fill in the form, and I’ll get back to you as soon as possible.
+          </SC.FormParagraph>
+        </SC.TextCon>
+        <SC.FormStyled onSubmit={handleSubmit}>
+          <SC.InputCon>
+            <SC.InputStyled
+              type="text"
+              name="name"
+              placeholder="name"
+              value={formik.values.name}
+              onChange={handleChange}
+              status={
+                formik.errors.name === "A name can't be so short"
+                  ? "error"
+                  : formik.values.name.length > 1
+                  ? "success"
+                  : null
+              }
+            />
+            {formik.errors.name === "A name can't be so short" ? (
+              <SC.InputError>{formik.errors.name}</SC.InputError>
+            ) : (
+              <SC.InputError style={{ opacity: "0" }}>
+                just empty space
+              </SC.InputError>
+            )}
+          </SC.InputCon>
+          <SC.InputCon>
+            <SC.InputStyled
+              type="text"
+              name="email"
+              placeholder="email"
+              onChange={handleChange}
+              value={formik.values.email}
+              status={
+                formik.errors.email === "Sorry, invalid format"
+                  ? "error"
+                  : formik.values.email.length > 1
+                  ? "success"
+                  : null
+              }
+            />
+            {formik.errors.email === "Sorry, invalid format" ? (
+              <SC.InputError>{formik.errors.email}</SC.InputError>
+            ) : (
+              <SC.InputError style={{ opacity: "0" }}>
+                just empty space
+              </SC.InputError>
+            )}
+          </SC.InputCon>
+          <SC.InputCon>
+            <SC.TextAreaStyled
+              name="message"
+              placeholder="message"
+              value={formik.values.message}
+              onChange={handleChange}
+              status={
+                formik.errors.message ===
+                "Message should be more than 10 symbols"
+                  ? "error"
+                  : formik.values.message.length > 10
+                  ? "success"
+                  : null
+              }
+            ></SC.TextAreaStyled>
+            {formik.errors.message ===
+            "Message should be more than 10 symbols" ? (
+              <SC.InputError>{formik.errors.message}</SC.InputError>
+            ) : (
+              <SC.InputError style={{ opacity: "0" }}>
+                just empty space
+              </SC.InputError>
+            )}
+          </SC.InputCon>
+          <SC.ButtonCon>
+            <SC.SubmitButton>send message</SC.SubmitButton>
+          </SC.ButtonCon>
+        </SC.FormStyled>
+      </SC.InnerCon>
     </SC.CommonCon>
   );
 };
