@@ -191,11 +191,23 @@ export const SubmitButton = styled.button`
   border: none;
 
   border-bottom: 1px solid #4ee1a0;
+
+  @media (min-width: 1440px) {
+    transition: color 0.3s ease-in-out;
+    &:hover {
+      color: #4ee1a0;
+      cursor: pointer;
+      transition: color 0.3s ease-in-out;
+    }
+  }
 `;
 
 export const InputCon = styled.div`
+position: relative;
+
   text-align: right;
   margin-bottom: 32px;
+
 `;
 
 export const InputError = styled.p`
@@ -203,3 +215,10 @@ export const InputError = styled.p`
   line-height: 1.33;
   color: #ff6f5b;
 `;
+
+export const ErrorImage = styled.div`
+position: absolute;
+
+top: 0;
+right: 0;
+`

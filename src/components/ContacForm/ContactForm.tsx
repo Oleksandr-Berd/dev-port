@@ -2,13 +2,13 @@ import * as Yup from "yup";
 import { useFormik } from "formik";
 import { ChangeEvent } from "react";
 import { ToastContainer, toast } from "react-toastify";
-
+import { useMediaQuery } from "usehooks-ts";
 
 import * as SC from "./ContactFormStyled";
 
 import bg from "../../assets/images/form_bg_mob.svg";
 import bg_desk from "../../assets/images/bg_contact_desk.svg"
-import { useMediaQuery } from "usehooks-ts";
+import {ReactComponent as ErrorSvg} from "../../assets/images/errors.svg"
 
 const validationSchema = Yup.object().shape({
   name: Yup.string()
@@ -109,7 +109,12 @@ toast.success(
               }
             />
             {formik.errors.name === "A name can't be so short" ? (
-              <SC.InputError>{formik.errors.name}</SC.InputError>
+              <>
+                <SC.InputError>{formik.errors.name}</SC.InputError>
+                <SC.ErrorImage>
+                  <ErrorSvg />
+                </SC.ErrorImage>
+              </>
             ) : (
               <SC.InputError style={{ opacity: "0" }}>
                 just empty space
@@ -132,7 +137,12 @@ toast.success(
               }
             />
             {formik.errors.email === "Sorry, invalid format" ? (
-              <SC.InputError>{formik.errors.email}</SC.InputError>
+              <>
+                <SC.InputError>{formik.errors.email}</SC.InputError>
+                <SC.ErrorImage>
+                  <ErrorSvg />
+                </SC.ErrorImage>
+              </>
             ) : (
               <SC.InputError style={{ opacity: "0" }}>
                 just empty space
@@ -156,7 +166,12 @@ toast.success(
             ></SC.TextAreaStyled>
             {formik.errors.message ===
             "Message should be more than 10 symbols" ? (
-              <SC.InputError>{formik.errors.message}</SC.InputError>
+              <>
+                <SC.InputError>{formik.errors.message}</SC.InputError>
+                <SC.ErrorImage>
+                  <ErrorSvg />
+                </SC.ErrorImage>
+              </>
             ) : (
               <SC.InputError style={{ opacity: "0" }}>
                 just empty space
